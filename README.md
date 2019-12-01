@@ -9,15 +9,14 @@ Python PyQt
  
 2 open the document run  
 
-'''
+```
 pip install PyQt5-5.13.2-5.13.2-cp35.cp36.cp37.cp38-none-win_amd64.whl
-'''  
+```  
 
 3  
-
-'''
+```
 pip install lxml 
-'''  
+```  
 
 ## For linux 
 ## For MAC
