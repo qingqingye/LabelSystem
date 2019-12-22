@@ -7,6 +7,7 @@ import platform
 import re
 import sys
 import subprocess
+import os
 
 from functools import partial
 from collections import defaultdict
@@ -787,6 +788,7 @@ class MainWindow(QMainWindow, WindowMixin):
                        # add chris
                         difficult = s.difficult)
 
+
         shapes = [format_shape(shape) for shape in self.canvas.shapes]
         # Can add differrent annotation formats here
         try:
@@ -1287,14 +1289,37 @@ class MainWindow(QMainWindow, WindowMixin):
     def saveFile(self, _value=False):
         if self.defaultSaveDir is not None and len(ustr(self.defaultSaveDir)):
             if self.filePath:
+                # basename is the picture name such as one.jpg
                 imgFileName = os.path.basename(self.filePath)
+                # splittext then get the pure name such as one
                 savedFileName = os.path.splitext(imgFileName)[0]
+                labelToSave = ""
+                count = self.labelList.count()
+                for i in range(count):
+                    labelToSave = labelToSave+self.labelList.item(i).text()
+
+                temp=self.filePath
+                temp =  temp.replace(imgFileName, labelToSave+".jpg")
+                os.rename(self.filePath, temp)
+
                 savedPath = os.path.join(ustr(self.defaultSaveDir), savedFileName)
                 self._saveFile(savedPath)
         else:
             imgFileDir = os.path.dirname(self.filePath)
             imgFileName = os.path.basename(self.filePath)
             savedFileName = os.path.splitext(imgFileName)[0]
+
+            labelToSave = ""
+            count = self.labelList.count()
+            for i in range(count):
+                labelToSave + self.labelList.item(i).text()
+            print(labelToSave)
+            print(self.filePath)
+            src = os.path.join(os.path.abspath(self.filePath))
+            dst = os.path.join(os.path.abspath(self.filePath), labelToSave + '.jpg')
+            print(src, "addddddd", dst)
+          #  os.rename(src, dst)
+
             savedPath = os.path.join(imgFileDir, savedFileName)
             self._saveFile(savedPath if self.labelFile
                            else self.saveFileDialog(removeExt=False))
