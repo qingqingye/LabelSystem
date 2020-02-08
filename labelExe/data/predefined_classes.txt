@@ -1,0 +1,32 @@
+colors_yellow_light yellow
+colors_yellow_bright yellow
+colors_white_off white
+colors_white_pure white
+colors_orange_orange-peach
+colors_orange_orange-flame
+colors_orange_orange-crimson
+colors_orange_orange-coral
+colors_orange_orange-carrot
+products_skirt_skirt-pant
+products_skirt_skirt-short
+products_skirt_skirt-midi
+products_skirt_skirt-midi-zipped
+products_skirt_skirt-midi-pencil
+products_skirt_skirt-long
+products_skirt_skirt-long-asymmetic
+products_skirt_skirt-long-slit
+products_skirt_skirt-mini
+products_skirt_skirt-mini-puffy
+products_skirt_skirt-mini-ruffle
+products_skirt_skirt-overskirt
+products_skirt_skirt-sarong
+products_skirt_skirt-crinoline
+products_skirt_skirt-hippy
+products_skirt_skirt-swimming
+products_skirt_skirt-wrap
+fabrics_lace_embroidery
+fabrics_lace_mesh
+fabrics_denim_stone-washed
+fabrics_denim_indigo
+prints&patterns_flowers_romantic
+prints&patterns_flowers_paisley
